@@ -1,8 +1,6 @@
 class Train
-  attr_reader :route, :speed, :wagon, :name_train
+  attr_reader :route, :speed, :wagon, :name_train, :station
   attr_accessor :wagons
-
-protected
 
   def initialize(name_train)
     @name_train = name_train
@@ -26,20 +24,14 @@ protected
   end
 
   def station_next
-    if @station == @route.stations.last
-      puts "Поезд находится на конечной"
-    else
+    if @station != @route.stations.last
       @station = @route.stations[@route.stations.index(@station) + 1]
-      puts "Поезд перемещен на станцию #{@station.name_station}"
     end
   end
 
   def station_prev
-    if @route.stations.index(@station) == 0  
-      puts "Поезд находится на начальной"
-    else
+    if @route.stations.index(@station) != 0  
       @station = @route.stations[@route.stations.index(@station) - 1]
-      puts "Поезд перемещен на станцию #{@station.name_station}"
     end
   end
 

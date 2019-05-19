@@ -7,21 +7,11 @@ class Route
   end
     
   def station_add(station)
-    if @stations.include?(station) == true
-      puts "Станция уже существует"
-    else
-      @stations.insert(-2, station)
-      puts "Станция добавлена"
-    end
+    @stations.insert(-2, station)
   end
 
   def station_delete(station)
-    if station != @stations.first && station != @stations.last
-      @stations.delete(station)
-      puts "Станция удалена"
-    else
-      puts "Выберите станцию, которая не является начальной/конечной."
-    end
+    @stations.delete(station)
   end
 end
 

@@ -1,8 +1,6 @@
 class Station
   attr_accessor :trains, :name_station
 
-protected #для пользователя закрыты все функции, кроме доступных в меню
-
   def initialize(name_station)
     @name_station = name_station
     @trains = []
